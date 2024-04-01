@@ -1,0 +1,18 @@
+{
+  "annotations": {
+    "changelogDate": "20240401051954"
+  },
+  "applications": ["myApp"],
+  "fields": [],
+  "name": "A",
+  "relationships": [
+    {
+      "otherEntityName": "b",
+      "otherEntityRelationshipName": "a",
+      "relationshipName": "b",
+      "relationshipSide": "left",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "searchEngine": "no"
+}

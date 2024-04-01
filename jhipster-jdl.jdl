@@ -1,0 +1,23 @@
+
+application {
+  config {
+    baseName myApp
+    applicationType monolith
+    packageName com.myapp
+    authenticationType jwt
+    devDatabaseType h2Disk
+    prodDatabaseType mysql
+    clientFramework angularX
+    clientTheme yeti
+
+  }
+  entities *
+}
+
+entity A {}
+
+entity B {}
+
+relationship OneToMany {
+  A to B
+}
