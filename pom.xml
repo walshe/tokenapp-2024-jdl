@@ -405,7 +405,10 @@
                             </platforms>
                         </from>
                         <to>
-                            <image>myapp:latest</image>
+                            <image>101034096726.dkr.ecr.ap-southeast-1.amazonaws.com/tokenapp-2024</image>
+                            <tags>
+                                <tag>${project.artifactId}-${project.version}</tag>
+                            </tags>
                         </to>
                         <container>
                             <entrypoint>
