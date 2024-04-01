@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws ecr get-login-password --region ap-southeast-1 | docker login --username AWS --password-stdin 101034096726.dkr.ecr.ap-southeast-1.amazonaws.com
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - ./mvnw package -Pprod -DskipTests jib:build
+      - echo Image pushed to ECR
+  post_build:
+    commands:
+      - >
+        printf '{ "AWSEBDockerrunVersion": "1", "Image": { "Name": "101034096726.dkr.ecr.ap-southeast-1.amazonaws.com/tokenapp-2024:latest", "Update": "true" }, "Ports": [ { "ContainerPort": "8080" } ] }' > Dockerrun.aws.json
+artifacts:
+  files:
+    - Dockerrun.aws.json
+
+cache:
+  paths:
+    - '/root/.m2/**/*'
