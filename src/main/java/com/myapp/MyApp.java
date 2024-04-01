@@ -68,6 +68,10 @@ public class MyApp {
         SpringApplication app = new SpringApplication(MyApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
+        log.info("DATABASE PASSWORD-->" + env.getProperty("spring.datasource.password"));
+        log.info("DATABASE USER-->" + env.getProperty("spring.datasource.username"));
+        log.info("DATABASE URL-->" + env.getProperty("spring.datasource.url"));
+        log.info("sys env SPRING_DATASOURCE_PASSWORD" + System.getenv("SPRING_DATASOURCE_PASSWORD"));
         logApplicationStartup(env);
     }
 
