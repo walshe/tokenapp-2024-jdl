@@ -33,8 +33,6 @@ spring:
       enabled: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://database-1.crwqoeikqxa5.ap-southeast-1.rds.amazonaws.com/myApp?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
-    username: admin
     hikari:
       poolName: Hikari
       auto-commit: false
